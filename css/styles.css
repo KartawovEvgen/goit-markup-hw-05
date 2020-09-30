@@ -5,6 +5,7 @@
 /* вторичный цвет фона #F5F4FA */
 /* цвет бекграунда #E5E5E5 */
 :root {
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   --primary-text-color: #212121;
   --text-color: #757575;
   --accent-color: #2196f3;
@@ -31,6 +32,7 @@ body {
   list-style: none;
   padding: 0;
   margin: 0;
+  
 }
 
 .section {
@@ -71,6 +73,11 @@ body {
 .site-nav {
   display: flex;
   margin-left: 85px;
+  
+}
+.site-nav .item{
+  position: relative;
+  border: 0px;
 }
 
 /* для новичков */
@@ -108,6 +115,25 @@ body {
 .site-nav .link:hover,
 .site-nav .link:focus {
   color: var(--accent-color);
+  
+}
+.site-nav .link:hover::after{
+  /* opacity: 1; */
+  width: 100%;
+}
+.site-nav .link::after{
+  content: '';
+  display: block;
+  position: absolute;
+  /* width: 100%; */
+  width: 0%;
+  height: 5px;
+  background-color:var(--accent-color);
+  bottom: 0;
+  left: 0;
+  border-radius: 2px;
+  /* opacity: 0; */
+  transition: width 250ms var(--timing-function) ;
 }
 
 /* Auth-nav */
@@ -147,6 +173,7 @@ body {
 /* Hero */
 
 .hero {
+  position: relative;
   max-width: 1600px;
   height: 600px;
   margin-right: auto;
