@@ -642,6 +642,7 @@ button {
 }
 
 .portfolio-web {
+  
   margin-bottom: 20px;
 }
 .project {
@@ -668,8 +669,9 @@ button {
  
   
 }
+
+
 .description {
-  display: flex;
   position: absolute;
   top: 0;
   left: 0;
@@ -710,8 +712,11 @@ a {
 }
 
 .flex-container {
+ 
+  
   display: flex;
   flex-wrap: wrap;
+  
 }
 
 .flex-element {

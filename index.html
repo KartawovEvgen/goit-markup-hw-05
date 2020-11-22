@@ -10,6 +10,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/0.6.0/modern-normalize.min.css"
     />
     <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/modal.css">
   </head>
   <body>
     <header class="page-header">
@@ -60,7 +61,8 @@
             эффективные решения <br />
             для вашего бизнеса
           </h1>
-          <a href="" class="button primary">Заказать услугу</a>
+          <button class="button primary" data-modal-open>Заказать услугу</button>
+          <!-- <a href="" class="button primary">Заказать услугу</a> -->
         </div>
       </section>
 
@@ -455,5 +457,16 @@
         <!-- <p class="Developedby">2020 | Developed by GoIT Students</p> -->
       </div>
     </footer>
+
+
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates obcaecati consequatur quam placeat iusto eligendi? Optio, ratione at? Voluptatibus necessitatibus vel sapiente explicabo hic, nulla quas harum adipisci accusantium quam!</p>
+        <button data-modal-close>Close</button>
+      </div>
+    </div>
+
+
+    <script src="./js/modal.js"></script>
   </body>
 </html>
