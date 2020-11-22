@@ -121,17 +121,31 @@ body {
   /* opacity: 1; */
   width: 100%;
 }
-.site-nav .link::after{
+.site-nav .studio::after {
   content: '';
   display: block;
   position: absolute;
   /* width: 100%; */
-  width: 0%;
+  width: 100%;
   height: 5px;
   background-color:var(--accent-color);
   bottom: 0;
   left: 0;
-  border-radius: 2px;
+  border-radius: 5px;
+  /* opacity: 0; */
+  transition: width 250ms var(--timing-function) ;
+}
+.site-nav .portfolio::after {
+  content: '';
+  display: block;
+  position: absolute;
+  /* width: 100%; */
+  width: 100%;
+  height: 5px;
+  background-color:var(--accent-color);
+  bottom: 0;
+  left: 0;
+  border-radius: 5px;
   /* opacity: 0; */
   transition: width 250ms var(--timing-function) ;
 }
@@ -271,6 +285,9 @@ body {
   flex-wrap: wrap;
 }
 
+.flex-item {
+  position: relative;
+}
 .flex-what-we-do .flex-item {
   width: calc((100% - 60px) / 3);
   margin-right: 30px;
@@ -284,16 +301,46 @@ body {
 .section.no-padding-top {
   padding-top: 0px;
 }
-
-.section .works {
-  margin-left: 140px;
-  margin-top: 0;
-  margin-bottom: 0;
-  order: 3;
-  font-size: 14px;
-  text-transform: uppercase;
+.flex-what-we-do{
+  position: relative;
 }
 
+.section .works {
+  display: flex;
+  order: 3;
+  font-size: 14px;
+  color: var(--primary-white-color);
+  text-transform: uppercase;
+  align-items: center;
+  justify-content: center;
+}
+.works-desk {
+  position: absolute;
+  margin: 0;
+  width: 370px;
+  height: 70px;
+  left: 0;
+  bottom: 0;
+  background: rgba(47, 48, 58, 0.8);
+}
+.works-mobile {
+  position: absolute;
+  margin: 0;
+  width: 370px;
+  height: 70px;
+  left: 400px;
+  bottom: 0;
+  background: rgba(47, 48, 58, 0.8);
+}
+.works-disign {
+  position: absolute;
+  margin: 0;
+  width: 370px;
+  height: 70px;
+  left: 800px;
+  bottom: 0;
+  background: rgba(47, 48, 58, 0.8);
+}
 /* Our team */
 .flex-our-team {
   display: flex;
@@ -606,6 +653,7 @@ button {
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
+  
 }
 .category {
   margin-top: 0;
@@ -617,16 +665,40 @@ button {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.88;
+ 
+  
 }
 .description {
-  display: none;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%-48px;
+  height: 168px;
+  align-items: center;
+  justify-content: center;
+  padding: 63px 24px;
+  
   margin: 0;
-
   color: var(--primary-white-color);
   background-color: var(--accent-color);
   font-weight: 400;
   font-size: 18px;
   line-height: 1.56;
+  opacity: 0.9;
+  
+  transform: translatey(140%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1) ;
+  
+  
+  
+}
+.flex-element:hover .description {
+  transform: translatey(0);
+  
+  
+  
+  
 }
 a {
   text-decoration: none;
@@ -643,12 +715,16 @@ a {
 }
 
 .flex-element {
-  width: calc((100% - 60px) / 3);
+  position: relative;
+  overflow: hidden;
+  width: calc((100% - 90px) / 3);
   margin-bottom: 30px;
   margin-right: 30px;
 
   box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12);
   border-radius: 0px 0px 4px 4px;
+ 
+ 
 }
 
 .flex-element:nth-child(3n) {
